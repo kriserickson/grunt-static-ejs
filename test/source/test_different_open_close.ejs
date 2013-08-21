@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    [% if (development) { %]
+        <link href="css/style1.css" rel="stylesheet">
+        <link href="css/style2.css" rel="stylesheet">
+        <link href="css/style3.css" rel="stylesheet">
+        <script src="js/js1.js"></script>
+        <script src="js/js2.js"></script>
+        <script src="js/js3.js"></script>
+    [% } else { %]
+        <link href="css/merged.css" rel="stylesheet">
+        <script src="js/merged.js"></script>
+    [% } %]
+
+</head>
+<body>
+
+<div data-role="page" id="loading">
+    <content>
+        [%= content %]
+    </content>
+</div>
+
+<script type="text/template" id="noteTemplate">
+    <div><%= name %></div>
+    <h5>Note Created On : <%= date %></h5>
+    <h5><%= text %></h5>
+</script>
+
+</body>
+</html>
+
+
+
