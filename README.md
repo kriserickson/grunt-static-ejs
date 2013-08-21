@@ -1,5 +1,4 @@
-grunt-static-ejs
-================
+# grunt-static-ejs [![Build Status](https://travis-ci.org/kriserickson/grunt-static-ejs.png?branch=master)](https://travis-ci.org/kriserickson/grunt-static-ejs)
 
 Grunt Static EJS is designed to convert single static ejs files.
 
