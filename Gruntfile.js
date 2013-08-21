@@ -26,13 +26,13 @@ module.exports = function (grunt) {
         static_ejs: {
             test_simple : {
                 src: 'test/source/test_simple.ejs',
-                dest: 'test//results/test_simple.html',
+                dest: 'test/results/test_simple.html',
                 options: { }
             },
-            debug: {
-                src: 'RecipeFolder/app/mobileApp.ejs',
-                dest: 'cordova/www/index.html',
-                options: { development: true, open: '[%', close: '%]', platform: grunt.option('platform'), isPaid: grunt.option('is-paid') }
+            test_different_open_close: {
+                src: 'test/source/test_different_open_close.ejs',
+                dest: 'test/results/test_different_open_close.html',
+                options: { development: false, open: '[%', close: '%]', content: 'Test Content', date: '2013-08-21' }
             }
         },
 
@@ -48,6 +48,7 @@ module.exports = function (grunt) {
     grunt.registerTask('test', [
         'clean:test',
         'static_ejs:test_simple',
+        'static_ejs:test_different_open_close',
         'nodeunit'
     ]);
 
