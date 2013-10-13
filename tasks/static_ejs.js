@@ -19,7 +19,11 @@ module.exports = function (grunt) {
             return false;
         }
 
-        if (typeof this.data === 'object' && this.data.src && this.data.dest) {
+        if (Object.prototype.toString.call(this.data) === '[object Array]') {
+            for (var i = 0; i < this.data.length; i++) {
+                staticEjs(this.data[i]); 
+            }
+        } else if (typeof this.data === 'object' && this.data.src && this.data.dest) {
             staticEjs(this.data);
         } else {
             grunt.log.writeln("ejs accepts multiple targets");
